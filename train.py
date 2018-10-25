@@ -20,13 +20,13 @@ clf = clf.fit(X, Y)
 print('Predicted value:', clf.predict([[190, 70, 43]]))
 print('Accuracy', clf.score(X,Y))
 
-print('Export the model to model.pkl')
-f = open('model.pkl', 'wb')
+print('Export the model to aml-model.pkl')
+f = open('aml-model.pkl', 'wb')
 pickle.dump(clf, f)
 f.close()
 
-print('Import the model from model.pkl')
-f2 = open('model.pkl', 'rb')
+print('Import the model from aml-model.pkl')
+f2 = open('aml-model.pkl', 'rb')
 clf2 = pickle.load(f2)
 
 X_new = [[154, 54, 35]]
@@ -41,7 +41,7 @@ from sklearn.externals import joblib
 
 run = Run.get_submitted_run()
 
-model_path = "model.pkl"
+model_path = "aml-model.pkl"
 
 # Save model as part of the run history
 with open(model_path, "wb") as file:
